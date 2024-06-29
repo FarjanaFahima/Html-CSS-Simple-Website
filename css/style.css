@@ -1,61 +1,162 @@
-* {
-    margin: 5px;
-    box-sizing: border-box;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 
-body {
-    height: 95vh;
-    background: #34e7e4;
-    font-size: sans-serif;
-    text-align: center;
-    color: white;
-    font-size: 24px;
-    display: flex;
-    flex-direction: column;
+.banner {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/images/bgImage.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.navbar{
+  width: 85%;
+  margin: auto;
+  padding: 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.logo{
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+  
+}
+.navbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
 }
 
-.header {
-    background: #3c48c6;
-    padding: 1em 0;
+.nav-link{
+  text-decoration: none;
+  color: #fff;
 }
 
-.main {
-    display: flex;
-    flex: 1;
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.left {
-    background: #3c48c6;
-    padding: 3em 0;
-    flex: 15%; /* Changed to percentage */
+.navbar ul li {
+  display: inline-block; /* Make the list items inline */
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+  margin: 0 15px; /* Add some spacing between items */
 }
 
-main {
-    background: #3c48c6;
-    padding: 3em 0;
-    flex: 70%; /* Changed to percentage */
+.navbar ul li::after {
+  content: '';
+  height: 3px;
+  width: 0;
+  background: #007896;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.5s;
+  
 }
 
-.right {
-    background: #3c48c6;
-    padding: 3em 0;
-    flex: 15%; /* Changed to percentage */
+.navbar ul li:hover::after {
+  width: 100%;
 }
 
-footer {
-    background: #3c40c6;
-    padding: 1em 0;
+.content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center vertically and horizontally */
+  text-align: center;
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 70px;
+  margin-top: 80px;
+}
+
+.content p {
+  margin: 20px auto;
+  font-size: 50px; /* Add unit */
+  line-height: 25px;
+}
+button{
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #009688;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+}
+span{
+  background-size: #009688;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+button {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #007896;
+  background: none;
+  color: #007896;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #007896;
+  transition: width 0.5s;
+  z-index: 0;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+button:hover span {
+  color: white;
+  
+}
+button:hover {
+  border: none;
+  
 }
 
 
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
-    .main {
-        flex-direction: column;
-    }
 
-    .left, .right, main {
-        flex: none; /* Override the flex property */
-        width: 100%; /* Full width for each section */
-    }
-}
+
+    
